@@ -1,66 +1,52 @@
-# Incident Response Planning & Security Playbooks
+# Incident Response Plan & Playbooks
 
-**Project type:** Cybersecurity training — incident response plan and playbook design  
-**Scenario:** Capybara Unlimited (training organization)  
-**Focus:** Incident readiness, escalation, containment, recovery, communication, and post-incident improvement
+**Training assignment | Incident preparation, team responsibilities, and response procedures**
 
-## Project overview
+## About this project
 
-I developed a structured **incident response plan (IRP)** for a medium-sized organization as part of my cybersecurity analyst training. The plan describes how a security team would prepare for, detect, assess, contain, eradicate, recover from, and learn from cybersecurity incidents. It also establishes response roles, stakeholder communications, performance measures, and three scenario-specific playbooks.
+I wrote an incident response plan for **Capybara Unlimited**, a fictional medium-sized company used in my cybersecurity training. The goal was to put together a process people could follow when something goes wrong, from the first alert through recovery and lessons learned.
 
-**Scope clarification:** This is a **planning and documentation exercise**, not evidence that I ran an incident response team, responded to a real organizational breach, deployed the named tools, or tested the procedures in production.
+I also developed playbooks for three common situations: malware, phishing, and denial-of-service attacks.
 
-## Objectives and coverage
+This repository contains a **plan I designed**, not a record of incidents I handled at a company or procedures I tested in production.
 
-The training plan set four objectives: **minimize impact**, **restore operations safely**, **strengthen security after incidents**, and **meet applicable reporting and regulatory obligations**. Its intended coverage includes employees and contractors, on-premises and cloud systems, endpoints, networks, and remote access. Addressed incident types include malware/ransomware, phishing, account compromise, data breaches, insider threats, and DoS/DDoS.
+## The response process
 
-## My deliverables
+The plan covers six stages:
 
-| Deliverable | What it covers |
+1. **Preparation:** Policies, training, monitoring tools, backups, and incident playbooks.
+2. **Detection and analysis:** Review alerts, gather evidence, classify the incident, and decide when to escalate.
+3. **Containment:** Isolate affected systems, restrict compromised accounts, and prevent further spread.
+4. **Eradication:** Remove malicious activity and address the underlying cause.
+5. **Recovery:** Restore systems carefully and monitor for signs of reinfection.
+6. **Lessons learned:** Document what happened and improve the process for next time.
+
+[Read the response lifecycle](docs/response-lifecycle.md).
+
+## Playbooks
+
+| Playbook | What it covers |
 | --- | --- |
-| [Response lifecycle](docs/response-lifecycle.md) | Preparation; detection and analysis; containment; eradication; recovery; post-incident analysis |
-| [Roles and communication](docs/roles-and-communications.md) | Incident Commander, SOC, forensic specialists, IT, Legal, communications, and staff |
-| [Malware infection playbook](playbooks/malware-infection.md) | Evidence collection, analysis, containment, eradication, recovery, and lessons learned |
-| [Phishing response playbook](playbooks/phishing-response.md) | Message investigation, containment, affected-user checks, credential response, and monitoring |
-| [Denial-of-service playbook](playbooks/denial-of-service.md) | Attack characterization, impact assessment, affected services, and traffic mitigations |
-| [KPIs and maintenance](docs/kpis-and-maintenance.md) | Proposed detection, containment, recovery, closure, and improvement metrics |
+| [Malware infection](playbooks/malware-infection.md) | Investigating suspicious files and behavior, preserving evidence, containment, and recovery |
+| [Phishing](playbooks/phishing-response.md) | Reviewing suspicious email, identifying affected users, protecting accounts, and follow-up |
+| [Denial of service](playbooks/denial-of-service.md) | Investigating unusual traffic, checking service impact, and choosing appropriate mitigations |
 
-## Illustrative incident response flow
+## Who does what
 
-```mermaid
-flowchart LR
-    A[Prepare] --> B[Detect and analyze]
-    B --> C[Contain]
-    C --> D[Eradicate]
-    D --> E[Recover]
-    E --> F[Review and improve]
-    F --> A
-```
+One part I spent time on was making responsibilities clear. The plan identifies an Incident Commander, SOC analysts, forensic investigators, IT administrators, Legal/Compliance, Communications, and employees. It also covers internal updates and how external notifications should be handled.
 
-## Key design decisions
+[Read the roles and communication plan](docs/roles-and-communications.md).
 
-- **Define accountability:** An Incident Commander coordinates decisions while SOC analysts, investigators, system administrators, Legal, and Communications have distinct responsibilities.
-- **Use evidence-led triage:** Incorporate SIEM, endpoint, and network evidence to classify incidents by severity and type before deciding escalation and scope.
-- **Preserve forensic material:** Maintain records and protect relevant logs and artifacts throughout analysis and containment.
-- **Recover safely:** Validate backups and the absence of residual threats before returning affected systems to service.
-- **Communicate deliberately:** Maintain an internal communication log and route regulatory and public notifications through appropriate review.
-- **Measure and improve:** Propose metrics for detection, containment, recovery, incident closure, and completion of lessons-learned actions.
+## Measuring and improving the process
 
-## Example technologies mentioned in the plan
+I proposed tracking how long it takes to detect, contain, and recover from incidents, along with incident closure and completion of improvement actions.
 
-The source document lists **Splunk, QRadar, Suricata, Snort, endpoint detection and response products, network firewalls, backup/restore systems, Wireshark, and forensic tools** as possible technology categories or examples. **Listing a product does not claim I deployed or used it in this particular planning exercise.**
+[Read the proposed KPIs and review schedule](docs/kpis-and-maintenance.md).
 
-## Skills demonstrated
+The training document defines these measures, but it doesn't contain real performance data.
 
-- Incident response process design and documentation
-- Security alert classification and escalation planning
-- Defensive prioritization and coordination across teams
-- Incident-specific procedural playbook writing
-- Stakeholder communication and reporting considerations
-- Post-incident improvement and operational KPI definition
+## What I learned
 
-## Source and limitations
+Good incident response needs more than technical tools. People need to know who is responsible for decisions, what evidence to preserve, when to communicate, and what has to be checked before systems go back online.
 
-This project is an **original public-facing summary** of my Capybara Unlimited incident response planning assignment from TripleTen cybersecurity training. The original plan is a proposed procedure. It does **not** include evidence of a tabletop exercise, real incident execution, implemented controls, or actual KPI results. Those activities are not claimed here.
-
-Original course templates and unreviewed training materials are not included. No confidential source reports, sensitive datasets, or credentials are published here.
+This project comes from my TripleTen training work. The source plan names several commercial security products as examples, but that does not mean I used or deployed every one of them in this exercise. Original course templates and sensitive information are not included.
