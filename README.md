@@ -59,8 +59,8 @@ The source document lists **Splunk, QRadar, Suricata, Snort, endpoint detection 
 - Stakeholder communication and reporting considerations
 - Post-incident improvement and operational KPI definition
 
-## Source, limitations, and publication
+## Source and limitations
 
 This project is an **original public-facing summary** of my Capybara Unlimited incident response planning assignment from TripleTen cybersecurity training. The original plan is a proposed procedure. It does **not** include evidence of a tabletop exercise, real incident execution, implemented controls, or actual KPI results. Those activities are not claimed here.
 
-Original course templates and unreviewed training materials are not included. Before making the repository public, complete the [publication checklist](PUBLICATION_CHECKLIST.md) and confirm that public summaries of this exercise are permitted.
+Original course templates and unreviewed training materials are not included. No confidential source reports, sensitive datasets, or credentials are published here.
